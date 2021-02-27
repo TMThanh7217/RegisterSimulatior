@@ -1,61 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:padding="6dp" android:orientation="vertical">
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <TableLayout
         android:id="@+id/myTableLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" android:stretchColumns="3">
-    <TableRow>
-        <TextView android:text="Username"/>
-        <EditText android:id="@+id/edit_username" android:layout_span="3"/>
-    </TableRow>
-    <TableRow>
-        <TextView android:text="Password"></TextView>
-        <EditText android:id="@+id/edit_pwd" android:layout_span="3"></EditText>
-    </TableRow>
-    <TableRow>
-        <TextView android:text="Retype"></TextView>
-        <EditText android:id="@+id/edit_re" android:layout_span="3"></EditText>
-    </TableRow>
-    <TableRow>
-        <TextView android:text="Birthdate"></TextView>
-    </TableRow>
-    <TableRow>
-        <EditText android:id="@+id/bday" android:layout_span="3"></EditText>
-        <Button android:id="@+id/bdate_btn" android:text="Select" ></Button>
-    </TableRow>
-    <TableRow>
-        <TextView android:text="Gender"></TextView>
-    </TableRow>
-    <TableRow android:gravity="center">
-        <RadioGroup android:orientation="horizontal">
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:text="Male"></RadioButton>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:text="Female"></RadioButton>
-        </RadioGroup>
-    </TableRow>
-    <TableRow>
-        <TextView android:text="Hobbies"></TextView>
-    </TableRow>
-    <TableRow android:gravity="center">
-    <CheckBox android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tennis"></CheckBox>
-    <CheckBox android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Futbal"></CheckBox>
-    <CheckBox android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Others"></CheckBox>
-    </TableRow>
-        <TableRow android:gravity="center">
-            <Button android:id="@+id/reset_btn" android:text="Reset"></Button>
-            <Button android:id="@+id/signup_btn" android:text="Sign-up"></Button>
+        android:orientation="vertical" android:stretchColumns="3"
+        tools:ignore="UselessParent"
+        android:layout_marginBottom="10dp">
+        <TableRow>
+            <TextView android:text="@string/username" android:textAlignment="viewEnd" />
+            <EditText android:id="@+id/edit_username" android:layout_span="3"
+                tools:ignore="LabelFor"
+                android:autofillHints="Username"
+                android:inputType="text" />
+        </TableRow>
+        <TableRow>
+
+            <TextView android:text="@string/password" android:textAlignment="viewEnd" />
+            <EditText android:id="@+id/edit_pwd" android:layout_span="3"
+                tools:ignore="LabelFor"
+                android:autofillHints="Username"
+                android:inputType="textPassword" />
+        </TableRow>
+        <TableRow>
+
+            <TextView android:text="@string/retype" android:textAlignment="viewEnd" />
+            <EditText
+                android:id="@+id/edit_re"
+                android:layout_span="3"
+                android:autofillHints="Retype Password"
+                android:inputType="textPassword"
+                tools:ignore="LabelFor" />
         </TableRow>
     </TableLayout>
+
+    <TextView android:text="@string/birthdate"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:layout_marginBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7">
+            <EditText
+                android:id="@+id/bday"
+                android:autofillHints="Birth Day"
+                android:inputType="date"
+                tools:ignore="LabelFor"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3">
+
+            <Button
+                android:id="@+id/bdate_btn"
+                android:text="@string/select"
+                tools:ignore="DuplicateIds"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView android:text="@string/gender"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
+    <RadioGroup android:orientation="horizontal"
+        tools:ignore="UselessParent"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female" />
+    </RadioGroup>
+
+
+    <TextView android:text="@string/hobbies"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
+    <LinearLayout android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tennis" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/futbal" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/others" />
+    </LinearLayout>
+
+    <LinearLayout android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/reset_btn"
+            android:text="@string/reset"
+            tools:ignore="ButtonStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"/>
+
+        <Button
+            android:id="@+id/signup_btn"
+            android:text="@string/sign_up"
+            tools:ignore="ButtonStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.5" />
+    </LinearLayout>
 </LinearLayout>

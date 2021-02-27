@@ -25,8 +25,5 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        edit_username = (EditText)findViewById(R.id.edit_username);
-        edit_pwd = (EditText)findViewById(R.id.edit_pwd);
-        edit_re = (EditText)findViewById(R.id.edit_re);
     }
 }
