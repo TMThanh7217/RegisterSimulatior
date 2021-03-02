@@ -75,18 +75,24 @@ public class registerform extends Activity implements View.OnClickListener {
             check_tennis.setChecked(false);
         }
         else if (v.getId() == btn_signup.getId()) {
+            System.out.println(edit_bdate.getText().toString());
             if (edit_pwd.getText().toString().equals(edit_re.getText().toString())) {
-                Intent signupIntent = new Intent(this, resultform.class);
-                Bundle signupBundle = new Bundle();
-                signupBundle.putString("username", edit_username.getText().toString());
-                signupBundle.putString("pwd", edit_pwd.getText().toString());
-                signupBundle.putString("birthdate", edit_bdate.getText().toString());
-                signupBundle.putBoolean("gender", radio_male.isChecked());
-                signupBundle.putBoolean("tennis", check_tennis.isChecked());
-                signupBundle.putBoolean("futbal", check_futbal.isChecked());
-                signupBundle.putBoolean("others", check_others.isChecked());
-                signupIntent.putExtras(signupBundle);
-                startActivityForResult(signupIntent, 1122);
+                if (edit_bdate.getText().toString().matches("^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)\\d{4}$")) {
+                    Intent signupIntent = new Intent(this, resultform.class);
+                    Bundle signupBundle = new Bundle();
+                    signupBundle.putString("username", edit_username.getText().toString());
+                    signupBundle.putString("pwd", edit_pwd.getText().toString());
+                    signupBundle.putString("birthdate", edit_bdate.getText().toString());
+                    signupBundle.putBoolean("gender", radio_male.isChecked());
+                    signupBundle.putBoolean("tennis", check_tennis.isChecked());
+                    signupBundle.putBoolean("futbal", check_futbal.isChecked());
+                    signupBundle.putBoolean("others", check_others.isChecked());
+                    signupIntent.putExtras(signupBundle);
+                    startActivity(signupIntent);
+                    finish();
+                    System.exit(0);
+                }
+                else Toast.makeText(getApplicationContext(),"Enter a valid date with format: dd/mm/yyyy", Toast.LENGTH_SHORT).show();
             }
             else
                 Toast.makeText(getApplicationContext(),"Retype dose not match password. Please enter again!!!!", Toast.LENGTH_SHORT).show();

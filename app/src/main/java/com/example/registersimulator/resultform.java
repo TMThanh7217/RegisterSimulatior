@@ -23,7 +23,7 @@ public class resultform extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resultform);
 
-        btn_exit = findViewById(R.id.signup_btn);
+        btn_exit = findViewById(R.id.exit_btn);
         btn_exit.setOnClickListener(this);
 
         viewUsername = findViewById(R.id.viewUsername);
@@ -41,6 +41,15 @@ public class resultform extends Activity implements View.OnClickListener {
         String hobbies = signupBundle.getBoolean("tennis") ? "Tennis " : "";
         hobbies += signupBundle.getBoolean("futbal") ? "FutBal " : "";
         hobbies += signupBundle.getBoolean("others") ? "Other" : "";
+
+        viewUsername.setText(username);
+        String encrypt_pwd = "";
+        for (int i = 0; i < password.length(); i++)
+            encrypt_pwd += "*";
+        viewPwd.setText(encrypt_pwd);
+        viewBirthdate.setText(birthdate);
+        viewGender.setText(gender);
+        viewHobbies.setText(hobbies);
     }
 
 
