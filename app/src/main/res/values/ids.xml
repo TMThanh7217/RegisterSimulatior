@@ -2,4 +2,6 @@
 <resources>
     <item name="edit_username" type="id" />
     <item name="myTableLayout" type="id" />
+    <item name="viewUsername" type="id" />
+    <item name="reset_btn" type="id" />
 </resources>

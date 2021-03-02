@@ -23,4 +23,6 @@
     <string name="others">Others</string>
     <string name="reset">Reset</string>
     <string name="sign_up">Sign up</string>
+    <string name="secondary_header_text">Your information registered</string>
+    <string name="exitBtnTxt">Exit</string>
 </resources>

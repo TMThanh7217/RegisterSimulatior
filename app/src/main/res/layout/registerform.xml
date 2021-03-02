@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.7">
             <EditText
-                android:id="@+id/bday"
+                android:id="@+id/bdate"
                 android:autofillHints="Birth Day"
                 android:inputType="date"
                 tools:ignore="LabelFor"
@@ -88,11 +88,13 @@
         android:gravity="center">
 
         <RadioButton
+            android:id="@+id/radio_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/male" />
 
         <RadioButton
+            android:id="@+id/radio_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/female" />
@@ -110,16 +112,19 @@
         android:layout_marginBottom="10dp">
 
         <CheckBox
+            android:id="@+id/check_tennis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tennis" />
 
         <CheckBox
+            android:id="@+id/check_futbal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/futbal" />
 
         <CheckBox
+            android:id="@+id/check_others"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/others" />
